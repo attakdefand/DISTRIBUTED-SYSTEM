@@ -17,3 +17,7 @@ Thumbs.db
 *.pdb
 *.exe
 *.rlib
+
+# Temporary files
+source_files.txt
+tracked_files.txt
