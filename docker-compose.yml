@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    command: "--http_port 8222"
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3000
+    depends_on:
+      - nats
+    networks:
+      - microservices
+
+  user-service:
+    build:
+      context: ./services/user-service
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3001
+      - DATABASE_URL=sqlite:user_service.db
+    depends_on:
+      - nats
+    networks:
+      - microservices
+
+  order-service:
+    build:
+      context: ./services/order-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3002
+      - DATABASE_URL=sqlite:order_service.db
+    depends_on:
+      - nats
+    networks:
+      - microservices
+
+  web-bff:
+    build:
+      context: ./bff/web-bff
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3003"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=3003
+    depends_on:
+      - gateway
+    networks:
+      - microservices
+
+networks:
+  microservices:
+    driver: bridge

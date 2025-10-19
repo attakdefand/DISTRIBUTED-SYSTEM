@@ -3,8 +3,8 @@ target/
 **/target/
 
 # IDE files
-*.vscode/
-*.idea/
+.vscode/
+.idea/
 
 # OS files
 .DS_Store
@@ -12,3 +12,8 @@ Thumbs.db
 
 # Environment files
 .env
+
+# Large binary files
+*.pdb
+*.exe
+*.rlib
