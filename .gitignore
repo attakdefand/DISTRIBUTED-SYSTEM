@@ -1,0 +1,14 @@
+# Target directories
+target/
+**/target/
+
+# IDE files
+*.vscode/
+*.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env

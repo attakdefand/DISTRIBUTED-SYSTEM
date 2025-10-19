@@ -1,0 +1,16 @@
+[package]
+name = "security"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+jsonwebtoken = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+time = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+rustls = "0.21"
+webpki = "0.22"
+microservice-config = { path = "../microservice-config" }

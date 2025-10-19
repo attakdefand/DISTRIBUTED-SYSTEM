@@ -1,0 +1,25 @@
+[package]
+name = "order-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sqlx = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+http = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+uuid = { workspace = true }
+time = { workspace = true }
+thiserror = { workspace = true }
+validator = { workspace = true }
+microservice-config = { path = "../../microservice-config" }
+dotenvy = { workspace = true }
+moka = { workspace = true }
+jsonwebtoken = { workspace = true }
+shared = { path = "../../shared" }

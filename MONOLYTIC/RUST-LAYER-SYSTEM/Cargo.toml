@@ -1,0 +1,28 @@
+[package]
+name = "rust-layer-system"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "sqlite", "uuid", "time"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace", "fs"] }
+http = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1.0", features = ["v4"] }
+time = { version = "0.3", features = ["serde"] }
+thiserror = "1.0"
+validator = { version = "0.16", features = ["derive"] }
+config = "0.14"
+dotenvy = "0.15"
+moka = { version = "0.12", features = ["future"] }
+jsonwebtoken = "9.3.1"
+
+[dev-dependencies]
+testcontainers = "0.15"
+reqwest = { version = "0.11", features = ["json"] }

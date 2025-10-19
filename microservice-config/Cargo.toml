@@ -1,0 +1,9 @@
+[package]
+name = "microservice-config"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+config = { workspace = true }
+serde = { workspace = true }
+dotenvy = { workspace = true }

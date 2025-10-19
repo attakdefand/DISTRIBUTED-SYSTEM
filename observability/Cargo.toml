@@ -1,0 +1,16 @@
+[package]
+name = "observability"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+opentelemetry = { workspace = true }
+opentelemetry-otlp = { workspace = true }
+opentelemetry-semantic-conventions = { workspace = true }
+opentelemetry_sdk = "0.21.2"
+tokio = { workspace = true }
+serde = { workspace = true }
+microservice-config = { path = "../microservice-config" }
+tracing-opentelemetry = "0.22.0"

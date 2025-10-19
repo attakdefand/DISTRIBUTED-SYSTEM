@@ -1,0 +1,16 @@
+[package]
+name = "messaging"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-nats = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+time = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+futures = "0.3"
+thiserror = { workspace = true }
+microservice-config = { path = "../microservice-config" }
